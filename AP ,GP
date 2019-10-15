@@ -1,0 +1,31 @@
+l=[]
+[l.append(int(x)) for x in input("enter the series").split()]
+
+def gp(l):
+    a=[]
+    for i in range(1,len(l)):
+        a.append(l[i]/l[i-1])
+    if len(set(a))==1:
+        return True
+    else:
+        return False
+
+def ap(l):
+    d=[]
+    for i in range(1,len(l)):
+        d.append(l[i]- l[i-1])
+    if len(set(d))==1:
+        return True
+    else :
+        return False
+
+u=ap(l)
+o=gp(l)
+if u==True and o==False:
+    print("series is AP")
+elif u==False and o==True:
+    print("series is GP")
+elif u==True and o==True:
+    print("series is in AP and GP")
+else:
+    print("no fixed series")
