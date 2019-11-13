@@ -1,0 +1,13 @@
+class mother:
+    def __init__(self,eye):
+        self.eye=eye
+
+class son(mother):
+    def __init__(self,eye,age):
+        self.age=age
+        mother.__init__(self,eye)
+
+
+s=son(eye="brown",age=9)
+print(s.eye)
+print(s.age)
