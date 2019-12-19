@@ -1,0 +1,25 @@
+import os
+import sys
+
+def timeConversion(s):
+    if s[8:]=="AM":
+        if s[0:2]=="12":
+            l="00"+s[2:8]
+            return(l)
+        elif s=="12:00:00AM":
+            return("00:00:00")
+        else:
+            return(s[:8])
+    elif s[8:]=="PM":
+        if s[0:2]=="12":
+            return(s[:8])
+        elif s=="12:00:00PM":
+            return("24:00:00")
+        else:
+            l=int(s[0:2])+12
+            return(str(l)+s[2:8])
+       
+s = input()
+result = timeConversion(s)
+print(result)
+     
