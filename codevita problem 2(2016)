@@ -1,0 +1,65 @@
+for detail video refer: https://edyst.com/cohort/codevita-2020-gp4Ak/module/basics-of-codevita-L1ZDv/topic/patterns-R8MLw/question/4/name/-Lg7B4CzXQuI5fumLTew?is_required=1
+///////////////////******************************///////////////////////////////
+
+k = int(input())
+for _ in range(k):
+    n = int(input())
+    if n <= 1:
+        print("You cannot generate christmas tree")
+    if n > 20:
+        print("Tree is no more")
+    if n>1 and n<=20:
+        for j in range(1, n + 2):
+            print((n+1 - j) * (" "), end="")              ///////////////////////// full tree/////////////////////
+            print(("*") * (2 * j - 1))
+
+
+        for e in range(1, n - 1):
+            for p in range(1, n - e + 1):
+                print((e) * " ", end="")
+                print((n - e - p) * (" "), end="")              ////////////// partial tree ////////////////
+                print(("*") * (2 * p + 1))
+
+
+        for i in range(2):
+            print(n * " ", end="")                            /////////////////bottom stand /////////////////////
+            print("*")
+
+
+////////////////////******************************************////////////////////////////////
+
+input:
+5
+0
+1
+2
+1000
+5
+
+output:
+
+You cannot generate christmas tree
+You cannot generate christmas tree
+  *
+ ***
+*****
+  *
+  *
+Tree is no more
+     *
+    ***
+   *****
+  *******
+ *********
+***********
+    ***
+   *****
+  *******
+ *********
+    ***
+   *****
+  *******
+    ***
+   *****
+     *
+     *
